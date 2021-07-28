@@ -1,0 +1,83 @@
+{% extends 'layout/layoutAdmin.html.twig' %}
+
+{% block title %} La Liste des Posts  !{% endblock %}
+
+{% block body %}
+    <style>
+
+        h1 {
+            font-family: Cambria, fantasy;
+            font-weight: bold;
+            color: #022368;
+        }
+        h5{
+            text-align: center;
+            font-family: Cambria, fantasy;
+            font-weight: bold;
+            color: #022368;
+            margin-top: 20px;
+            margin-bottom: 20px !important;
+        }
+        .allCards{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap ;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 10px;
+
+        }
+
+        .card-body {
+            margin: 25px;
+            min-width: 350px;
+
+
+        }
+        .twoButton{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .addCategoryBtn {
+            margin: 35px;
+
+        }
+
+        .shadow-custom {
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 15px 4px rgba(0, 0, 0, 0.32) !important;
+        }
+    </style>
+
+
+    <h1 style="text-align: center; margin: 40px 0"> Posts List Category</h1>
+    <div class="allCards">
+
+    {% for PostCategoriesEntity in PostCategoriesEntities %}
+        <div class="cards">
+            <div class="card-body shadow-custom">
+                <h5 class="card-title">{{ PostCategoriesEntity.name }}</h5>
+              <div class="twoButton">  <a type="button" class="btn btn-outline-info"
+                        href="{{ path('edit_post_category',{ 'id':PostCategoriesEntity.id }) }}">Edit</a>
+                  <a type="button" class="btn btn-outline-danger"
+                     href="{{ path('delete_post_category',{ 'id':PostCategoriesEntity.id }) }}">Delete</a></div>
+            </div>
+        </div>
+
+
+    {% endfor %}
+     </div>
+    <a href="{{ path('create_post_category') }} " class="btn btn-success addCategoryBtn"> Add Post Category</a>
+
+{% endblock %}
+
+
+
+
+

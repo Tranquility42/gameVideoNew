@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La liste des Posts{% endblock %}
+
+{% block body %}
+    <style>
+        body{
+            margin: 20px;
+        }
+        a {
+            margin: 10px;
+        }
+        h5 , h1 {
+            font-family: Cambria, fantasy;
+            font-weight: bold;
+            color: #022368;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+            font: 18px/1.5 sans-serif;
+            font-family: "Roboto Light", serif;
+            flex-wrap: wrap;
+            margin: 10px ;
+
+
+        }
+        .card{
+
+            min-width: 200px;
+            max-width: 300px;
+        }
+
+
+    </style>
+
+    <div >
+        <h1 style="text-align: center; margin: 40px 0"> POSTS LIST </h1>
+
+        <div class="cards">
+            {% for PostEntity in PostEntities %}
+                <div class="card m-1">
+                    <img
+                            src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/07/98e649b8-d826-45d1-a191-c73327f93866/1136_gettyimages-454112048.jpg"
+                            class="card-img-top"
+                            alt="..."
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ PostEntity.title }}</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make
+                            up the bulk of the card's content.
+                        </p>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="{{ path('edit_post',{ 'id':PostEntity.id }) }}" class="card-link btn btn-outline-info">Edit </a>
+                        <a href="{{ path('delete_post',{ 'id':PostEntity.id }) }}" class="card-link btn btn-outline-danger">Delete </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{{ path('create_post') }} " class="btn btn-success"> Add Post </a>
+
+{% endblock %}

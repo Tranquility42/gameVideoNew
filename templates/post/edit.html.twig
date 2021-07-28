@@ -1,0 +1,65 @@
+{% extends 'layout/layoutAdmin.html.twig' %}
+
+
+{% block body %}
+    <style>
+
+        h1 {
+            font-family: Cambria, fantasy;
+            font-weight: bold;
+            color: #022368;
+        }
+
+        .div-edit {
+            margin: 1em auto;
+            padding: 55px 50px;
+            max-width: 500px !important;
+            font: 18px/1.5 sans-serif;
+            font-family: "Roboto Light", serif;
+            display: flex ;
+            text-align: center;
+            align-content: center;
+            flex-direction: column;
+            background-color: #cbc8c8;
+
+        }
+        .shadow-custom{
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 8px rgba(0, 0, 0, 0.3) !important;
+        }
+        .label-class {
+            margin: 10px 0;
+            font-family: Calibri, fantasy;
+        }
+        .widget-class{
+            font-family: Calibri, fantasy;
+            padding: 10px 0;
+        }
+        button{
+            margin-top: 20px;
+            font-family: Calibri, fantasy;
+        }
+        button:hover{
+            background-color:#1668ef !important;
+            color: white !important;
+        }
+    </style>
+    <div class="div-edit shadow-custom">
+    <h1> Edit Post</h1>
+
+    {{ form_start(form) }}
+    <div class="label-class">{{ form_label(form.title) }}</div>
+    <div class="widget-class">{{ form_widget(form.title) }}</div>
+
+    <div class="label-class">{{ form_label(form.content) }}</div>
+    <div class="widget-class">{{ form_widget(form.content) }}</div>
+
+    <div class="label-class">{{ form_label(form.post) }}</div>
+    <div class="widget-class ">{{ form_widget(form.post) }}</div>
+
+    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-color="dark">
+        Edit Post
+    </button>
+
+    {{ form_end(form) }}
+    </div>
+{% endblock %}

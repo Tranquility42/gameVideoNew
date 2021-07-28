@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Post {% endblock %}
+
+{% block body %}
+
+    <style>
+        body{
+            display: flex ;
+            justify-content: center;
+        }
+         h1 {
+            font-family: Cambria, fantasy;
+            font-weight: bold;
+            color: #022368;
+        }
+
+        .div-create {
+            margin: 1em auto;
+            padding: 55px 50px;
+            max-width: 800px;
+            font: 18px/1.5 sans-serif;
+            font-family: "Roboto Light", serif;
+            display: flex ;
+            text-align: center;
+            align-content: center;
+            flex-direction: column;
+            background-color: #cbc8c8;
+
+        }
+
+    </style>
+
+    <div class="div-create shadow-custom">
+        <h1> Create Post </h1>
+
+        {{ form_start(form) }}
+
+        <div class="label-class">{{ form_label(form.title) }}</div>
+        <div class="widget-class">{{ form_widget(form.title) }}</div>
+
+        <div class="label-class">{{ form_label(form.content) }}</div>
+        <div class="widget-class">{{ form_widget(form.content) }}</div>
+
+        <div class="label-class">{{ form_label(form.post) }}</div>
+        <div class="widget-class ">{{ form_widget(form.post) }}</div>
+
+        <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-color="dark">
+            Create Post
+        </button>
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}

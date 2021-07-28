@@ -1,0 +1,16 @@
+{% extends 'layout/layoutAdmin.html.twig' %}
+
+{% block title %}  Edit Post {% endblock %}
+
+{% block body %}
+
+    <h1> Edit </h1>
+
+    {{ form_start(form) }}
+
+    <div class="label-class">{{ form_label(form.name) }}</div>
+    <div class="widget-class">{{ form_widget(form.name) }}</div>
+
+    {{ form_end(form) }}
+
+{% endblock %}
