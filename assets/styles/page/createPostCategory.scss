@@ -1,0 +1,26 @@
+.create_post_category {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+
+.form_post_category{
+  display: flex;
+  justify-content: center;
+
+  h1{
+    font-family: $title_font;
+  }
+  .input_create_post_category{
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly !important;
+    flex-direction: column;
+    width: 350px;
+    height: 400px;
+    background-color: $gray;
+  }
+}
+
+
+}

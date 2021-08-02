@@ -1,12 +1,34 @@
 {% extends 'layout/layout.html.twig' %}
 
-
 {% block title %} Hello User !{% endblock %}
 {% block body %}
+{#<img src="{{ asset('build/image/1.jpg') }}" alt="image">#}
+    <i class="fas fa-star"></i>
 
-<style>
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div >
+        <h1 style="text-align: center; margin: 40px 0"> Games List  </h1>
+
+{#        <div class="cards">#}
+{#            {% for game in games %}#}
+{#                <div class="card m-1">#}
+{#                    <img#}
+{#                            src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/07/98e649b8-d826-45d1-a191-c73327f93866/1136_gettyimages-454112048.jpg"#}
+{#                            class="card-img-top"#}
+{#                            alt="..."#}
+{#                    />#}
+{#                    <div class="card-body">#}
+{#                        <h5 class="card-title"></h5>#}
+{#                        <p class="card-text">#}
+{#                            {{ get_stars_note()}}#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    <div class="card-body text-center">#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+        {{ get_stars_note()}}
+        </div>
+    </div>
 
 
 {% endblock %}

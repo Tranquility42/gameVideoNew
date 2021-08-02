@@ -1,0 +1,19 @@
+.login_form{
+  display: flex;
+  justify-content: center;
+  align-content: center !important;
+
+  .global-div{
+    margin: 40px;
+    padding: 60px 40px;
+    background-color: $gray;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 20px 7px rgba(0, 0, 0, 0.07) !important;
+
+    h1{
+      font-family: $title_font;
+    }
+    label{
+      font-family: $text;
+    }
+  }
+}

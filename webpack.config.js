@@ -22,6 +22,10 @@ Encore
      */
     .addEntry('script', './assets/script/script.js')
     .addStyleEntry('style', './assets/styles/index.scss')
+    .copyFiles({
+        from: './assets/image',
+        to: 'image/[path][name].[ext]'
+    })
 
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
